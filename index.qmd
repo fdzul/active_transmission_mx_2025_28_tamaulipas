@@ -26,7 +26,26 @@ library(magrittr)
 
 ::: panel-tabset
 
-### [**Culiacan**]{style="color:#990000"}
+### [**Tampico**]{style="color:#990000"}
+
+```{r chains_tampico}
+denhotspots::transmission_chains_map(geocoded_dataset = z,
+                                     cve_edo = "28",
+                                     locality = "Tampico",
+                                     dengue_cases = "Confirmado")
+```
+
+
+### [**Ciudad Madero**]{style="color:#990000"}
+
+```{r chains_cd_madero}
+denhotspots::transmission_chains_map(geocoded_dataset = z,
+                                     cve_edo = "28",
+                                     locality = "Ciudad Madero",
+                                     dengue_cases = "Confirmado")
+```
+
+
 :::
 
 
@@ -34,9 +53,38 @@ library(magrittr)
 
 ::: panel-tabset
 
-### [**Culiacan**]{style="color:#990000"}
-:::
+### [**Tampico**]{style="color:#990000"}
 
+```{r heatmap_tampico}
+densnv::mp_heatmap(geocoded_datasets = z,
+                   cve_edo = "28",
+                   locality = c("Tampico", "Ciudad Madero"),
+                   status_caso = c(1, 2),
+                   week = c(1:53),
+                   zoom = NULL,
+                   map_type = NULL,
+                   alpha = 0.6,
+                   static = FALSE,
+                   palette = viridis::turbo)
+```
+
+### [**Ciudad Madero**]{style="color:#990000"}
+
+```{r heatmap_cd_madero}
+densnv::mp_heatmap(geocoded_datasets = z,
+                   cve_edo = "28",
+                   locality = "Ciudad Madero",
+                   status_caso = c(1, 2),
+                   week = c(1:53),
+                   zoom = NULL,
+                   map_type = NULL,
+                   alpha = 0.6,
+                   static = FALSE,
+                   palette = viridis::turbo)
+```
+
+
+:::
 
 
 # [**Log-Gaussian Cox Processes**]{style="font-size:8pt"}
