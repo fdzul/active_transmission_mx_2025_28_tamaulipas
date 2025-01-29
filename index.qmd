@@ -91,6 +91,6 @@ densnv::mp_heatmap(geocoded_datasets = z,
 
 ::: panel-tabset
 
-### [**Culiacan**]{style="color:#990000"}
+### [**Tampico**]{style="color:#990000"}
 
 :::
